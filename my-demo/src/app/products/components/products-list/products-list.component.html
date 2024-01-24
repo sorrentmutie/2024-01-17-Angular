@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Prezzo</th>
+            <th>Data</th>
+            <th>Foto</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+           <td>{{product.id}}</td>
+           <td>{{product | myProductPipe}}</td>
+           <td>{{product.price | currency: 'EUR'}}</td>
+           <td>{{product.releaseDate | date: 'dd/MM/yyyy'}}</td>
+           <td>
+              <img src="{{product.imageUrl}}">
+           </td>
+           <td>
+            <button (click)="showDetails(product)" class="btn btn-warning"> Mostra dettagli</button>
+           </td>
+        </tr>
+    </tbody>
+</table>
+

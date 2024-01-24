@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../../../products/models/product';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,11 @@ export class FooterComponent {
     counter = 0;
 
     constructor(){
+
+      const product: Product = {
+          id: 1, name :"Frigorifero", price: 1000, imageUrl: "https://picsum.photos/200/300", releaseDate: undefined
+      };
+
       console.log('FooterComponent constructor');
       setInterval( () => {
         console.log('FooterComponent setInterval');
