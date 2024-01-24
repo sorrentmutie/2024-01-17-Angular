@@ -18,10 +18,10 @@ export class FooterComponent {
       };
 
       console.log('FooterComponent constructor');
-      setInterval( () => {
-        console.log('FooterComponent setInterval');
-        this.counter++;
-      //   this.subTitle = `Contatore: ${this.counter}`;
-       }  , 1000);
+      // setInterval( () => {
+      //   console.log('FooterComponent setInterval');
+      //   this.counter++;
+      // //   this.subTitle = `Contatore: ${this.counter}`;
+      //  }  , 1000);
     }
 }

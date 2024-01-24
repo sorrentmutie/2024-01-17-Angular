@@ -1,0 +1,13 @@
+<ng-content></ng-content>
+<p>product-details works! {{counter}}</p>
+<p>{{product?.name}}</p>
+<p>{{counter2}}</p>
+
+<div *ngIf="product">
+    <input [(ngModel)]="product.name" >
+</div>
+
+<button  class="btn  btn-info" (click)="goBack()">Go Back</button>
+
+
+<ng-content select="[secondo]"></ng-content>

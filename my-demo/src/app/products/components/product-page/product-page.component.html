@@ -1,16 +1,41 @@
 <div *ngIf="allProducts.length > 0; else noProducts">
     <h3> Numero totale di prodotti: {{allProducts.length}}</h3>
-    <app-products-list [products]="allProducts" 
-      (productSelected)="allProductSelected($event)" ></app-products-list>
+    {{randomNumber}}
+
+    <div *ngIf="selectedProduct === undefined; else selected">
+        <app-products-list [products]="allProducts" 
+        (productSelected)="allProductSelected($event)" ></app-products-list>
+     </div>
+
+     <ng-template #selected>
+        <app-product-details [counter]="myCounter"   (emitter)="showTable($event)" [product]="selectedProduct">
+        
+            <div>
+               <p>Prova</p>
+               <p>Provissima</p>
+             </div>
+
+
+             <div secondo>
+               <h3>Sono alla fine</h3>
+             </div>
+
+        </app-product-details>
+        <button (click)="changeSelectedProduct()">Cambia Prodotto Selezionato</button>
+     </ng-template>
+   
+
 </div>
+
+
 
 <ng-template #noProducts>
    <h3>Non ci sono prodotti in catalogo</h3>
 </ng-template>
 
 
-
+<!-- 
 <hr/>
 
 <h3>Prodotti scontati</h3>
-<app-products-list  (productSelected)="discountedProductSelected($event)"  [products]="discountedProducts"></app-products-list>
+<app-products-list  (productSelected)="discountedProductSelected($event)"  [products]="discountedProducts"></app-products-list> -->
